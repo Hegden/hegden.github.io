@@ -1,3 +1,5 @@
 theme: jekyll-theme-minimal
+<img src="pic.jpg" alt="hi" class="inline"/>
 title: Hello!
 description: This site contains information about my academic interests, current projects, etc.
+
