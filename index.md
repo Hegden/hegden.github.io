@@ -8,7 +8,7 @@ My interests lie in the broad areas of Distributed and Parallel Programming Fram
 ### Current Projects
  
 - [Treelogy](https://bitbucket.org/plcl/treelogy)  -  A Benchmark Suite and an Ontology for Tree Traversal Algorithms.
-- [SPIRIT]:(https://bitbucket.org/plcl/treelogy) - A framework for creating distributed recursive tree applications. The source code is available under the DM folder of Treelogy sourcecode.
+- [SPIRIT](https://bitbucket.org/plcl/treelogy) - A framework for creating distributed recursive tree applications. The source code is available under the DM folder of Treelogy sourcecode.
 - HSSEigen: Parallelizing and distributed-memory implementation of super-fast eigen solvers for HSS matrices.
 
 ### Past Projects
