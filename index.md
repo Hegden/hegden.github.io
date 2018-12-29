@@ -16,8 +16,8 @@ My interests lie in the broad areas of Distributed and Parallel Programming Fram
 - Auto-generation of distributed implementations of shared-memory algorithms.
 
 ## Past Projects
+- [Hybrid CPU-GPU scheduling and execution of tree traversals](https://dl.acm.org/citation.cfm?id=2926261) - Scheduling optimization for tree traversal algorithms executing on GPUs.
 - HSSEigen: Parallelizing and distributed-memory implementation of super-fast eigen solvers for HSS matrices.
-- [Hybrid CPU-GPU scheduling and execution of tree traversals](http://dl.acm.org/citation.cfm?id=2851174) - Scheduling optimization for tree traversal algorithms executing on GPUs.
 - WaSP -  Ensemble-based, Warm-Starting Parameter Initialization for Training of Deep Neural Network Models.
 
 
@@ -30,4 +30,3 @@ My interests lie in the broad areas of Distributed and Parallel Programming Fram
 
 
 
-_This page is under construction. Stay tuned for more updates!_
