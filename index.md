@@ -10,7 +10,7 @@ My interests lie in the broad areas of Distributed and Parallel Programming Fram
 ## Current Projects
  
 - [Treelogy](https://bitbucket.org/plcl/treelogy)  -  A Benchmark Suite and an Ontology for Tree Traversal Algorithms.
-  [Paper (IEEE Xplore)] (https://ieeexplore.ieee.org/document/7975294)
+  [Paper (IEEE Xplore)](https://ieeexplore.ieee.org/document/7975294)
 - [SPIRIT](https://bitbucket.org/plcl/treelogy) - A framework for creating distributed recursive tree applications. The source code is available under the DM folder of Treelogy sourcecode.
   [Paper (ACM DL)](https://dl.acm.org/authorize.cfm?key=N39440)
 - Auto-generation of distributed implementations of shared-memory algorithms.
