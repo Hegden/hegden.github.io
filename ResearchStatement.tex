@@ -1,0 +1,81 @@
+%Large-scale data processing has become a necessity in the big-data era. Thanks to the availability of clusters with commodity compute nodes and high-speed interconnects, we can now process massive amounts of data in a cost-effective manner. 
+Massive computing power and applications running on this power, primarily confined to expensive supercomputers a decade ago, have now become mainstream through the availability of clusters with commodity computers and high-speed interconnects running big-data era applications. 
+The challenges associated with programming such systems, for effectively utilizing the computing power, have led to the creation of intuitive abstractions and implementations targeting average users, domain experts, and savvy (parallel) programmers. 
+There is often a trade-off between the ease of programming and performance when using these abstractions. 
+My research focuses on developing tools to bridge the gap between ease of programming and performance of {\em irregular} programs---programs that involve one or more of irregular- data structures, control structures, and communication patterns---on distributed-memory systems. 
+
+For example, the use of trees as spatial acceleration structures (kdtree, octree etc.) is a common optimization in {\em n-body} problems, which in a na\"ive implementation, require comparing each of a set of items with every element in the data set. 
+Such data-dependent computation manipulating complicated data structures such as trees and graphs causes unpredictability in control-flow and communication patterns. 
+And this unpredictability in irregular programs is the chief obstacle in effectively optimizing them for parallelism, locality, and vectorization, which are crucial for achieving a scalable performance. 
+As irregular programs typically involve massive data sets that overwhelm the memory of a single compute node, distributed-memory solutions become a necessity. 
+Summarizing my research gives a glimpse of the proposed solutions. I have introduced:
+\begin{itemize}
+\item a framework~\cite{hegde17ics} consisting of an abstraction and a {\em space-adaptive} runtime system for simplifying the creation of distributed implementations of recursive irregular programs using spatial acceleration structures. Through a set of optimizations, the system achieves a scalable performance and outperforms implementations done in contemporary distributed graph processing frameworks.
+\item an {\em ontology} and a benchmark suite~\cite{hegde17ispass} for better understanding of optimizations and tree-algorithms in general. Using the ontology, we generalize an existing optimization to a tree algorithm from another domain and find out optimizations applicable for a new tree algorithm.
+\item a framework~\cite{hegde19d2p} for automatically generating distributed implementations of recursive dynamic programs. Through an inspector-executor guided strategy, the system generated implementations execute significantly faster than manual implementations done using similar frameworks and often outperform hand-written distributed implementations.
+\end{itemize} 
+ 
+This research has explored topics in high-performance computing, programming languages, and distributed systems, and has touched upon a number of application domains such as data mining, numerical computing, statistics, and bioinformatics. 
+As a result, it has opened up new directions that I would like to explore. In the short term, I would like to optimize important irregular algorithms from the domains of numerical computing, bioinformatics, and image processing for large-scale data processing.
+In the long term, given the increasingly heterogeneous computing capabilities of nodes in a cluster, I would like to focus on developing techniques for efficiently utilizing the heterogeneous computing power for executing irregular programs, and making these techniques accessible to average programmer. 
+In this regard, I have open-sourced all my previous works so that expert programmers can improve the system and domain-specific application programmers can quickly deploy their algorithm.  
+
+\section*{Research approach} I have adopted the principle of generalization (of optimizations, methods) by abstracting common structural properties of irregular programs from various application domains. 
+This approach has been beneficial for me, since, understanding structural properties of an algorithm and optimizations has demanded a deep-dive into the application domain, and has fostered my interest in newer areas. 
+While SPIRIT~\cite{hegde17ics} employed a generalization of a Barnes-Hut specific optimization, Treelogy~\cite{hegde17ispass} tried to identify the conditions under which a generalization of an optimization could be possible.
+With D2P~\cite{hegde19d2p}, I believe I can generalize the inspector-executor based method, applied to recursive dynamic programs, to generate distributed implementations of a broader class of irregular applications.  
+    
+\section*{Prior research}
+SPIRIT~\cite{hegde17ics} provides a set of APIs and a runtime system to automate the creation and traversal of distributed spatial trees.
+I developed SPIRIT to address the insufficiency of traditional data-parallel approaches and existing systems in effectively parallelizing a subset of irregular applications based on spatial trees.
+As there is an abundant amount of parallelism in these applications due to repeated tree traversals, a data-parallel approach to parallelizing traversals by executing them on multiple replicas is ruled out for large data sets.
+I showed that traversals on distributed trees can be executed efficiently through the use of optimizations targeting locality, parallelism, communication overhead, and load-balance.  
+In doing so, I adopted locality optimizations~\cite{jo12oopsla, blocking} applied in a shared-memory context, proposed a novel pipeline-parallel approach to execute distributed traversals and showed partial replication of the tree as a tool to not only overcome traversal bottlenecks, but also trade-off performance with memory usage.
+I was also part of the work on developing an inspector-executor guided scheduling optimization for executing spatial tree traversals on GPUs~\cite{ics16liu}.
+
+Whether a new optimization or a tree algorithm, it is challenging to device an efficient implementation strategy considering a rich history of application- and platform- specific optimizations and tree algorithms.
+Treelogy~\cite{hegde17ispass} was conceived with the idea of understanding the connection between optimizations and tree-algorithms. 
+Treelogy provides an ontology and a benchmark suite of a broader class of tree algorithms to help answer: (i) is there any existing optimization that is applicable or effective for a new tree algorithm?
+(ii) can a new optimization developed for a particular tree algorithm be applied to existing tree algorithms from other domains?
+I show that a categorization (ontology) based on structural properties of tree-algorithms is useful for both developers of new optimizations and new tree algorithm creators.
+With the help of a suite of tree traversal kernels spanning the ontology, it is shown that GPU, shared-, and distributed-memory implementations are scalable and the two-point correlation algorithm with vptree performs better than the `standard' kdtree implementation.
+
+Given the complexities of distributed-memory programming, is it possible to completely automate the creation of distributed-memory implementations of irregular programs? 
+Here, a broader goal is to let a computer generate a distributed-memory implementation of {\em any} irregular program starting from its shared-memory artefact (specification, pseudocode, implementation). 
+I take the first step towards this goal through Dynamic Programming (DP) based applications. 
+DP based applications are not irregular per se. 
+However, recursive formulations of the underlying DP algorithms are. 
+Since recursive formulations involve irregular communication pattern only, they are a couple of degrees less complex compared to irregular applications with all three degrees of irregularity---data-structures, control-flow, and communication. As a result, they provide a convenient starting point. 
+D2P~\cite{hegde19d2p} is a framework for generating distributed implementations of DP problems starting from a specification of their recursive formulations.
+With the help of intuitive user-configurable knobs to control parallelism, I show that it is possible to achieve a scalable performance and even outperform hand-written distributed-memory implementations.
+
+%{\em Tree traversal} is a common algorithmic pattern in a subset of irregular applications that are focused heavily in their domain. 
+%Repeated traversals of the tree with no inter-traversal dependence in these applications suggests abundant parallelism. 
+%Unfortunately, the traditional data-parallel approach of parallelizing traversals by replicating the entire tree on multiple machines does not work since the tree grows with input size. 
+%Thus, calling for tree distribution and an abstraction to hide away the complexities of distribution. 
+%I addressed this problem in SPIRIT. 
+%SPIRIT provides APIs to automate the creation of distributed spatial trees and traverse these trees while employing several optimizations: 
+%as a traversal is now split up among multiple machines (due to tree distribution), SPIRIT employs a novel {\em pipeline-parallel} approach to parallelize sub-traversals belonging to different traversals. 
+%As traversals span a large portion of the tree, the traversals must be carefully scheduled to maximize locality while minimizing communication. 
+%Together with a message aggregation optimization, SPIRIT leverages recent research on locality optimizations for shared-memory systems~\cite{jo12oopsla, blocking} to achieve both objectives. 
+%Finally, to mitigate the effects of load-imbalance on sub-trees due to sub-traversals overloading a sub-tree, SPIRIT replicates bottleneck sub-trees.
+%The result is a {\em space-adaptive, distributed} tree traversal framework capable of trading-off memory space for performance while scaling to large number of processors.       
+
+
+
+\section*{Future directions}
+\paragraph{Short term} based on the frameworks and optimizations that I have built and used, I believe existing solutions for some of the problems in numerical computing, image processing, and bioinformatics can be improved using efficient data partitioning strategy, data-structures, and formulations targeting locality optimizations.  
+The specific goal would be to create abstractions and new algorithms for processing data at scale:
+(1) building a scalable system for finding similar images from a repository using efficient spatial acceleration structures such as distributed vptrees,
+(2) creating libraries of efficient distributed implementations leveraging recent advances in Eigen-value solvers, and 
+(3) creating efficient implementations of problems in bioinformatics based on their recursive formulations. 
+
+\paragraph{Long term} I would like to develop techniques for simplifying the creation of performance-oriented programs of irregular applications for large-scale data processing. 
+Considering the heterogeneity of cores---latency tolerant, NUMA-aware, GPUs---in nodes of state-of-the-art and future clusters, effective utilization of computing power asks for careful designing of algorithms and orchestrating the computation. 
+As a result we expect to see increased programming complexity, thus calling for automation. 
+I believe there are multiple concrete directions to realize the automation goal such as through a programming-by-examples/program-synthesis from specifications approach, using intuitive design of programming languages / domain-specific languages, source to source translation aided by efficient abstractions and runtime systems.
+However, in spirit, I believe the path towards realizing this goal requires understanding of the computation patterns in irregular applications, employing optimizations that are effective for those patterns, and mapping those computation patterns to hardware.  
+A peek into the past is reassuring: SPIRIT and Treelogy explored algorithms based on a common pattern of repeated tree traversals, and D2P explored algorithms with the inclusivity and intersection properties.%---method arguments of a recursive method summarize the entire data accesses done by that method.  
+
+
+
