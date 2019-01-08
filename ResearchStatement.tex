@@ -16,7 +16,7 @@ Summarizing my research gives a glimpse of the proposed solutions. I have introd
 \end{itemize} 
  
 This research has explored topics in high-performance computing, programming languages, and distributed systems, and has touched upon a number of application domains such as data mining, numerical computing, statistics, and bioinformatics. 
-As a result, it has opened up new directions that I would like to explore. In the short term, I would like to optimize important irregular algorithms from the domains of numerical computing, bioinformatics, and image processing for large-scale data processing.
+As a result, it has opened up new directions that I would like to explore. In the short term, I would like to optimize important irregular algorithms from the domains of numerical computing, bioinformatics, and image retrieval for large-scale data processing.
 In the long term, given the increasingly heterogeneous computing capabilities of nodes in a cluster, I would like to focus on developing techniques for efficiently utilizing the heterogeneous computing power for executing irregular programs, and making these techniques accessible to average programmer. 
 In this regard, I have open-sourced all my previous works so that expert programmers can improve the system and domain-specific application programmers can quickly deploy their algorithm.  
 
@@ -64,7 +64,7 @@ With the help of intuitive user-configurable knobs to control parallelism, I sho
 
 
 \section*{Future directions}
-\paragraph{Short term} based on the frameworks and optimizations that I have built and used, I believe existing solutions for some of the problems in numerical computing, image processing, and bioinformatics can be improved using efficient data partitioning strategy, data-structures, and formulations targeting locality optimizations.  
+\paragraph{Short term} based on the frameworks and optimizations that I have built and used, I believe existing solutions for some of the problems in numerical computing, image retrieval, and bioinformatics can be improved using efficient data partitioning strategy, data-structures, and formulations targeting locality optimizations.  
 The specific goal would be to create abstractions and new algorithms for processing data at scale:
 (1) building a scalable system for finding similar images from a repository using efficient spatial acceleration structures such as distributed vptrees,
 (2) creating libraries of efficient distributed implementations leveraging recent advances in Eigen-value solvers, and 
@@ -73,9 +73,9 @@ The specific goal would be to create abstractions and new algorithms for process
 \paragraph{Long term} I would like to develop techniques for simplifying the creation of performance-oriented programs of irregular applications for large-scale data processing. 
 Considering the heterogeneity of cores---latency tolerant, NUMA-aware, GPUs---in nodes of state-of-the-art and future clusters, effective utilization of computing power asks for careful designing of algorithms and orchestrating the computation. 
 As a result we expect to see increased programming complexity, thus calling for automation. 
-I believe there are multiple concrete directions to realize the automation goal such as through a programming-by-examples/program-synthesis from specifications approach, using intuitive design of programming languages / domain-specific languages, source to source translation aided by efficient abstractions and runtime systems.
+To realize the automation goal, I believe there are multiple concrete directions such as a programming-by-examples/program-synthesis from specifications approach, using intuitive design of programming languages / domain-specific languages, source to source translation aided by efficient abstractions and runtime systems.
 However, in spirit, I believe the path towards realizing this goal requires understanding of the computation patterns in irregular applications, employing optimizations that are effective for those patterns, and mapping those computation patterns to hardware.  
-A peek into the past is reassuring: SPIRIT and Treelogy explored algorithms based on a common pattern of repeated tree traversals, and D2P explored algorithms with the inclusivity and intersection properties.%---method arguments of a recursive method summarize the entire data accesses done by that method.  
+In this regard, experience from the past is reassuring: SPIRIT and Treelogy explored algorithms based on a common pattern of repeated tree traversals, and D2P explored algorithms with the inclusivity and intersection properties.%---method arguments of a recursive method summarize the entire data accesses done by that method.  
 
 
 
