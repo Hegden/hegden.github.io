@@ -34,6 +34,12 @@ ul.posts {
 ul.posts li {
     list-style: none;
 }
-a { 
-    color: blue; 
+a {
+    text-decoration: none;
+}
+a:link, a:visited {
+    color: blue;
+}
+a:hover {
+    color: red;
 }
