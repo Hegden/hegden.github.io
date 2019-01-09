@@ -12,17 +12,7 @@ nav ul li, footer ul li {
     display: inline;
     margin-right: 20px;
 }
-a {
-    text-decoration: none;
-    color: #0000EE;
-}
-a:hover {
-    text-decoration: underline;
-    color: #0033FF;
-}
-a:visited {
-color: #551A8B;
-}
+
 h1 {
     font-size: 3em;
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
@@ -44,3 +34,5 @@ ul.posts {
 ul.posts li {
     list-style: none;
 }
+:link { color: #0000EE; }
+:visited { color: #551A8B; }
