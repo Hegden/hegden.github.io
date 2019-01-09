@@ -34,5 +34,6 @@ ul.posts {
 ul.posts li {
     list-style: none;
 }
-:link { color: #0000EE; }
-:visited { color: #0000EE; }
+a { 
+    color: blue; 
+}
