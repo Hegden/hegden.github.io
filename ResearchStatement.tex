@@ -2,15 +2,15 @@
 Massive computing power and applications running on this power, primarily confined to expensive supercomputers a decade ago, have now become mainstream through the availability of clusters with commodity computers and high-speed interconnects running big-data era applications. 
 The challenges associated with programming such systems, for effectively utilizing the computing power, have led to the creation of intuitive abstractions and implementations targeting average users, domain experts, and savvy (parallel) programmers. 
 There is often a trade-off between the ease of programming and performance when using these abstractions. 
-My research focuses on developing tools to bridge the gap between ease of programming and performance of {\em irregular} programs---programs that involve one or more of irregular- data structures, control structures, and communication patterns---on distributed-memory systems. 
+My research focuses on developing tools to bridge the gap between ease of programming and performance of {\em irregular programs}---programs that involve one or more of irregular- data structures, control structures, and communication patterns---on distributed-memory systems. 
 
 For example, the use of trees as spatial acceleration structures (kdtree, octree etc.) is a common optimization in {\em n-body} problems, which in a na\"ive implementation, require comparing each of a set of items with every element in the data set. 
 Such data-dependent computation manipulating complicated data structures such as trees and graphs causes unpredictability in control-flow and communication patterns. 
 And this unpredictability in irregular programs is the chief obstacle in effectively optimizing them for parallelism, locality, and vectorization, which are crucial for achieving a scalable performance. 
-As irregular programs typically involve massive data sets that overwhelm the memory of a single compute node, distributed-memory solutions become a necessity. 
+As irregular programs typically involve data sets that overwhelm the memory or compute power of a single compute node, distributed-memory solutions become necessary. 
 Summarizing my research gives a glimpse of the proposed solutions. I have introduced:
 \begin{itemize}
-\item a framework~\cite{hegde17ics} consisting of an abstraction and a {\em space-adaptive} runtime system for simplifying the creation of distributed implementations of recursive irregular programs using spatial acceleration structures. Through a set of optimizations, the system achieves a scalable performance and outperforms implementations done in contemporary distributed graph processing frameworks.
+\item a framework~\cite{hegde17ics} consisting of an abstraction and a {\em space-adaptive} runtime system for simplifying the creation of distributed implementations of recursive irregular programs based on spatial acceleration structures. Through a set of optimizations, the system achieves a scalable performance, and outperforms implementations done in contemporary distributed graph processing frameworks.
 \item an {\em ontology} and a benchmark suite~\cite{hegde17ispass} for better understanding of optimizations and tree-algorithms in general. Using the ontology, we generalize an existing optimization to a tree algorithm from another domain and find out optimizations applicable for a new tree algorithm.
 \item a framework~\cite{hegde19d2p} for automatically generating distributed implementations of recursive dynamic programs. Through an inspector-executor guided strategy, the system generated implementations execute significantly faster than manual implementations done using similar frameworks and often outperform hand-written distributed implementations.
 \end{itemize} 
@@ -30,7 +30,8 @@ SPIRIT~\cite{hegde17ics} provides a set of APIs and a runtime system to automate
 I developed SPIRIT to address the insufficiency of traditional data-parallel approaches and existing systems in effectively parallelizing a subset of irregular applications based on spatial trees.
 As there is an abundant amount of parallelism in these applications due to repeated tree traversals, a data-parallel approach to parallelizing traversals by executing them on multiple replicas is ruled out for large data sets.
 I showed that traversals on distributed trees can be executed efficiently through the use of optimizations targeting locality, parallelism, communication overhead, and load-balance.  
-In doing so, I adopted locality optimizations~\cite{jo12oopsla, blocking} applied in a shared-memory context, proposed a novel pipeline-parallel approach to execute distributed traversals and showed partial replication of the tree as a tool to not only overcome traversal bottlenecks, but also trade-off performance with memory usage.
+In doing so, I adopted locality optimizations %~\cite{jo12oopsla, blocking} 
+applied in a shared-memory context, proposed a novel pipeline-parallel approach to execute distributed traversals and showed partial replication of the tree as a tool to not only overcome traversal bottlenecks, but also trade-off performance with memory usage.
 I was also part of the work on developing an inspector-executor guided scheduling optimization for executing spatial tree traversals on GPUs~\cite{ics16liu}.
 
 Whether a new optimization or a tree algorithm, it is challenging to device an efficient implementation strategy considering a rich history of application- and platform- specific optimizations and tree algorithms.
@@ -38,16 +39,16 @@ Treelogy~\cite{hegde17ispass} was conceived with the idea of understanding the c
 Treelogy provides an ontology and a benchmark suite of a broader class of tree algorithms to help answer: (i) is there any existing optimization that is applicable or effective for a new tree algorithm?
 (ii) can a new optimization developed for a particular tree algorithm be applied to existing tree algorithms from other domains?
 I show that a categorization (ontology) based on structural properties of tree-algorithms is useful for both developers of new optimizations and new tree algorithm creators.
-With the help of a suite of tree traversal kernels spanning the ontology, it is shown that GPU, shared-, and distributed-memory implementations are scalable and the two-point correlation algorithm with vptree performs better than the `standard' kdtree implementation.
+With the help of a suite of tree traversal kernels spanning the ontology, my collaborators and I show that GPU, shared-, and distributed-memory implementations are scalable and the two-point correlation algorithm with vptree performs better than the `standard' kdtree implementation.
 
 Given the complexities of distributed-memory programming, is it possible to completely automate the creation of distributed-memory implementations of irregular programs? 
 Here, a broader goal is to let a computer generate a distributed-memory implementation of {\em any} irregular program starting from its shared-memory artefact (specification, pseudocode, implementation). 
 I take the first step towards this goal through Dynamic Programming (DP) based applications. 
 DP based applications are not irregular per se. 
 However, recursive formulations of the underlying DP algorithms are. 
-Since recursive formulations involve irregular communication pattern only, they are a couple of degrees less complex compared to irregular applications with all three degrees of irregularity---data-structures, control-flow, and communication. As a result, they provide a convenient starting point. 
-D2P~\cite{hegde19d2p} is a framework for generating distributed implementations of DP problems starting from a specification of their recursive formulations.
-With the help of intuitive user-configurable knobs to control parallelism, I show that it is possible to achieve a scalable performance and even outperform hand-written distributed-memory implementations.
+Since recursive formulations involve irregular communication pattern only, they are a couple of degrees less complex compared to irregular applications with all three degrees of irregularity---data-structures, control-flow, and communication. As a result, recursive dynamic programs provide a convenient starting point. 
+D2P~\cite{hegde19d2p} is a framework for generating distributed implementations of DP problems starting from a {\em specification} of their corresponding recursive formulations.
+With the help of intuitive user-configurable knobs to control parallelism, I show that it is possible to achieve a scalable performance, and even outperform hand-written distributed-memory implementations.
 
 %{\em Tree traversal} is a common algorithmic pattern in a subset of irregular applications that are focused heavily in their domain. 
 %Repeated traversals of the tree with no inter-traversal dependence in these applications suggests abundant parallelism. 
