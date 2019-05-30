@@ -1,0 +1,125 @@
+\documentclass{article}
+\title{ECE 264: Advanced C Programming}
+Summer 2019
+
+\paragraph{Lectures:}
+Mondays, Tuesdays, Wednesdays, Thursdays, and Fridays, 8:40-9:40AM, EE 170
+Course web page: https://hegden.github.io/ece264/
+Piazza discussion page: https://piazza.com/purdue/summer2019/ece264/
+
+Instructor:
+Nikhil Hegde (hegden@purdue.edu)
+Office Hours: TuTh, 10:00-11:30 AM, EE207.
+
+TA:
+Snehith Reddy Guntaka (sguntaka@purdue.edu)
+Office Hours: EE 207, TBD
+
+\paragraph{Prerequisites} CS 15900 with a minimum grade of C-
+\paragraph{Textbook} Forouzan and Gilberg, Computer Science: A Structured Programming Approach Using C (3rd Edition). Lectures and class notes will supplement the textbook.
+\paragraph{Course outcomes} A student who successfully fulfills the course requirements will have demonstrated:
+\begin{enumerate}
+\item The ability to read and write C programs that uses files. 
+\item The ability to read and write C programs that use structures. 
+\item The ability to read and write C programs that use dynamic data structures.
+\item The ability to read and write C programs that use recursion. 
+\end{enumerate}
+
+These outcomes form the high-level outline for the material of this course. In more
+detail, after taking this course you will be able to:
+\begin{itemize}
+\item Explain the organization of a program in memory, including as it executes.
+\item Explain the principles of data types (including structures) and how they are represented in memory.
+\item Explain pointers, arrays, strings, and memory management (allocation and deallocation).
+\item Explain and implement dynamic data structures (linked lists and trees) and basic algorithms over these structures.
+\item Explain the concepts of induction and recursion, and use them to implement recursive functions.
+\item Explain and implement basic sorting algorithms (both recursive and iterative).
+\item Explain the concepts of asymptotic analysis and use them to reason about the running time of different algorithms.
+\item Write programs that read and write from files.
+\end{itemize}
+
+\paragraph{Course assessment} The achievement of course objectives will be assessed through a combination of tests (2 paper-based exams, 1 computer-based exam) and a series of programming assignments (8). The exams will test your understanding of the concepts covered in the class, while the programming assignments will test your ability to put those concepts into practice.
+
+\paragraph{Course grading} Grades will be assigned as follows:
+\begin{center}
+\begin{tabular}{|l|l|l|}
+\hline
+Score & Assessment & Comments \\ \hline 
+50\% & Exams & Each exam contributes equally at 13.33\% \\ \hline
+50\% & Programming assignments & Each assignment contributes equally at 6.25\% \\ \hline
+5\%  & Class participation  & Bonus \hline
+\end{tabular}
+\end{center}
+
+Note that the grading rubric adds up to 105\%. This is because class participation points function as bonus points that can raise your grade for noteworthy contributions during class or in online discussions (see below re: Course Discussion). Given your final numerical score, your course grade will be determined according to the following scale:
+\begin{center}
+\begin{tabular}{|c|l|}
+\hline
+If your numerical score is at least: & Your course grade will be at least: \\ \hline 
+85 & A \\ \hline
+75 & B \\ \hline
+65 & C \\ \hline
+55 & D  \hline
+\end{tabular}
+\end{center}
+
+\paragraph{Programming assignments} There will be approximately one programming assignment per week. Some of these assignments will be simple and test one or two basic concepts, while other assignments will be more complicated and may require writing a substantial amount of code. The amount of time allocated for each assignment and the weight that assignment will carry in your final grade will account for these differences.
+Programming assignments must follow the below guidelines:
+\begin{itemize}
+\item All programs must be compiled using the command: gcc -std=c99 -g -Wall -Wshadow --pedantic -Wvla -Werror
+\item All programs should compile and run correctly on ecegrid machines. It is your responsibility to make sure that your code works in that environment.
+\item Unless otherwise specified, all assignments are due at 11:59 PM on the deadline date.
+\end{itemize}
+
+Programming assignments will be submitted via GitHub Classroom (https://classroom.github.com). As such, you are required to have a GitHub account. These can be obtained for free at https://github.com.
+{\em You must also send your GitHub username to the Professors and TAs, with subject line `ECE 26400 GitHub account'' by Friday, June 14.}
+
+\paragraph{Late submission policy} except for medical and family emergencies (accompanied by verification), there will be no individual extensions granted for programming assignments. Late submissions will be scaled according to lateness, docking 10\% from your score per day late, up to a maximum of 50\%. Submissions more than 5 days late will be assigned a score of 0.
+
+\paragraph{Exams} we will have in-class paper-based exams. Logistics for the computer-based exam will be communicated later.
+The in-class exams are open book and open notes. You may bring the course textbook as well as any written/printed notes/programs from lectures or otherwise. {\em You may not use electronic devices}.
+
+\paragraph{Exam topics and dates}
+\begin{center}
+\begin{tabular}{|l|l|l|}
+\hline
+? Midterm 1 ? Tools, Program Stack, Structures, Pointers, Memory Allocation
+(February 14th [sorry!], 6:30?7:30pm, PHYS 114)
+? Midterm 2 ? Induction, Recursion, Sorting (March 7th, 6:30?7:30pm, PHYS 114)
+? Midterm 3 ? Dynamic data structures (April 19th, 6:30?7:30, PHYS 112)
+? Final ? Cumulative (TBD)
+\hline
+If you need a change in either the test times or environment due to an excused University absence or an approved accommodation from the Purdue Disability Resource Center, it is your responsibility to contact the Professor two weeks prior to the exam so alternate arrangements can be made. 
+
+\paragraph{Course discussion} this term we will be using Piazza for class discussion. If you have questions about the course or the project, we encourage you to post them on Piazza. It's a shared discussion forum, where your question can be answered by the instructors, the TAs or your fellow students! Find our class's Piazza page at: https://piazza.com/purdue/summer2017/ece264/
+
+Students who are active participants on Piazza, asking (or answering!) questions are eligible for class participation bonus points.
+
+\paragraph{Email} Questions about course material or programming assignments should be posted to Piazza or raised during lecture or office hours. {\em The Professors and TAs will not answer programming questions via email.} This is to allow other students who might have similar questions to benefit from our answers. Of course, if you have questions of a personal or confidential nature, we welcome your email.
+
+\paragraph{Course announcements} course announcements, including changes in due dates, course topics, programming assignment details, etc., will be communicated in three ways:
+\begin{enumerate}
+\item Updates to the relevant webpage(s)
+\item Announcement posts on Piazza and Blackboard
+\item Email announcements via the course listserv
+\end{enumerate}
+
+\paragraph{Course topics} below is the list of topics that will be covered in this course, and a rough estimate of how long we will spend on each. 
+Topic # of weeks
+Tools, program stack 2
+Data types, structures, pointers 2
+Memory allocation 1
+Induction and recursion 3
+Dynamic data structures: linked lists 2
+Dynamic data structures: trees 2
+
+\paragraph{Academic honesty} unless expressly allowed, you are expected to complete all
+assignments by yourself. However, you are allowed to discuss general issues with other
+students (programming techniques, clearing up confusion about requirements, etc.).
+You may discuss particular algorithmic issues on Piazza (but do not copy code!). {\em We will
+be using software designed to catch plagiarism in programming assignments, and all
+students found sharing solutions will be reported to the Dean of students.}
+
+Punishments for academic dishonesty are severe, including receiving an F in the course or being expelled from the University. By departmental rules, all instances of cheating will be reported to the Dean. On the first instance of cheating, students will receive a 0 on the assignment; the second instance of cheating will result in a failure of the course. 
+
+\paragraph{Campus interruptions} in the event of a major campus emergency, course requirements, deadlines and grading percentages are subject to changes that may be necessitated by a revised semester calendar or other circumstances beyond the instructor's control. In such an event, information will be provided through the course website and email.
