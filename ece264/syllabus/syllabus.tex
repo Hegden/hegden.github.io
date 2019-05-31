@@ -1,19 +1,26 @@
 \documentclass{article}
-\title{ECE 264: Advanced C Programming}
-Summer 2019
+\usepackage[margin=1in]{geometry}
+\usepackage{tabulary}
+\usepackage{float}
+\usepackage{lipsum}
+\begin{document}
+\begin{center}{\LARGE ECE 264: Advanced C Programming} \end{center}
+\begin{center}{\large Summer 2019} \end{center}
 
-\paragraph{Lectures:}
-Mondays, Tuesdays, Wednesdays, Thursdays, and Fridays, 8:40-9:40AM, EE 170
-Course web page: https://hegden.github.io/ece264/
-Piazza discussion page: https://piazza.com/purdue/summer2019/ece264/
+\bigskip
 
-Instructor:
+\paragraph{Lectures}
+Mondays, Tuesdays, Wednesdays, Thursdays, and Fridays (MTuWThF), 8:40-9:40AM, EE 170
+\paragraph{Course web page} https://hegden.github.io/ece264/
+\paragraph{Piazza discussion page} https://piazza.com/purdue/summer2019/ece264/
+
+\paragraph{Instructor}
 Nikhil Hegde (hegden@purdue.edu)
 Office Hours: TuTh, 10:00-11:30 AM, EE207.
 
-TA:
+\paragraph{TA}
 Snehith Reddy Guntaka (sguntaka@purdue.edu)
-Office Hours: EE 207, TBD
+Office Hours: TBD, EE207
 
 \paragraph{Prerequisites} CS 15900 with a minimum grade of C-
 \paragraph{Textbook} Forouzan and Gilberg, Computer Science: A Structured Programming Approach Using C (3rd Edition). Lectures and class notes will supplement the textbook.
@@ -32,41 +39,40 @@ detail, after taking this course you will be able to:
 \item Explain the principles of data types (including structures) and how they are represented in memory.
 \item Explain pointers, arrays, strings, and memory management (allocation and deallocation).
 \item Explain and implement dynamic data structures (linked lists and trees) and basic algorithms over these structures.
-\item Explain the concepts of induction and recursion, and use them to implement recursive functions.
+\item Explain the concept of recursion, and use it to implement recursive functions.
 \item Explain and implement basic sorting algorithms (both recursive and iterative).
-\item Explain the concepts of asymptotic analysis and use them to reason about the running time of different algorithms.
 \item Write programs that read and write from files.
 \end{itemize}
 
 \paragraph{Course assessment} The achievement of course objectives will be assessed through a combination of tests (2 paper-based exams, 1 computer-based exam) and a series of programming assignments (8). The exams will test your understanding of the concepts covered in the class, while the programming assignments will test your ability to put those concepts into practice.
 
 \paragraph{Course grading} Grades will be assigned as follows:
-\begin{center}
-\begin{tabular}{|l|l|l|}
-\hline
+\begin{table}[H]
+\centering
+\begin{tabulary}{\linewidth}{|c|c|c|} \hline
 Score & Assessment & Comments \\ \hline 
 50\% & Exams & Each exam contributes equally at 13.33\% \\ \hline
 50\% & Programming assignments & Each assignment contributes equally at 6.25\% \\ \hline
-5\%  & Class participation  & Bonus \hline
-\end{tabular}
-\end{center}
+5\%  & Class participation  & Bonus\\ \hline
+\end{tabulary}
+\end{table}
 
 Note that the grading rubric adds up to 105\%. This is because class participation points function as bonus points that can raise your grade for noteworthy contributions during class or in online discussions (see below re: Course Discussion). Given your final numerical score, your course grade will be determined according to the following scale:
-\begin{center}
-\begin{tabular}{|c|l|}
-\hline
+\begin{table}[H]
+\centering
+\begin{tabulary}{\linewidth}{|c|c|} \hline
 If your numerical score is at least: & Your course grade will be at least: \\ \hline 
 85 & A \\ \hline
 75 & B \\ \hline
 65 & C \\ \hline
-55 & D  \hline
-\end{tabular}
-\end{center}
+55 & D \\ \hline
+\end{tabulary}
+\end{table}
 
 \paragraph{Programming assignments} There will be approximately one programming assignment per week. Some of these assignments will be simple and test one or two basic concepts, while other assignments will be more complicated and may require writing a substantial amount of code. The amount of time allocated for each assignment and the weight that assignment will carry in your final grade will account for these differences.
 Programming assignments must follow the below guidelines:
 \begin{itemize}
-\item All programs must be compiled using the command: gcc -std=c99 -g -Wall -Wshadow --pedantic -Wvla -Werror
+\item \begin{flushleft}All programs must be compiled using the command:\end{flushleft} \linebreak gcc -std=c99 -g -Wall -Wshadow --pedantic -Wvla -Werror
 \item All programs should compile and run correctly on ecegrid machines. It is your responsibility to make sure that your code works in that environment.
 \item Unless otherwise specified, all assignments are due at 11:59 PM on the deadline date.
 \end{itemize}
@@ -76,19 +82,21 @@ Programming assignments will be submitted via GitHub Classroom (https://classroo
 
 \paragraph{Late submission policy} except for medical and family emergencies (accompanied by verification), there will be no individual extensions granted for programming assignments. Late submissions will be scaled according to lateness, docking 10\% from your score per day late, up to a maximum of 50\%. Submissions more than 5 days late will be assigned a score of 0.
 
-\paragraph{Exams} we will have in-class paper-based exams. Logistics for the computer-based exam will be communicated later.
-The in-class exams are open book and open notes. You may bring the course textbook as well as any written/printed notes/programs from lectures or otherwise. {\em You may not use electronic devices}.
+\paragraph{Exams} we will have two paper-based exams and one computer-based exam. Logistics for the exams will be communicated later.
+The paper-based exams are open book and open notes. You may bring the course textbook as well as any written/printed notes/programs from lectures or otherwise. {\em You may not use electronic devices in paper-based exams}.
 
 \paragraph{Exam topics and dates}
-\begin{center}
-\begin{tabular}{|l|l|l|}
+\begin{table}[H]
+\centering
+\begin{tabulary}{\linewidth}{|l|p{70mm}|p{40mm}|}\hline
+Exam & Topic & Date, Time, and Venue \\ \hline
+Exam1 (paper-based) & Tools, Program Stack, Structures, Pointers, Memory Allocation &  6/26/19, 8:40-9:40AM, Location: TBD \\ \hline
+Exam2 (computer-based) & Dynamic data structures and Recursion & 7/17/19, 8:40-9:40AM, Location:TBD \\ \hline
+Exam3 (paper-based) & Cumulative & 8/1/19, 8:40AM-9:40AM, Location:TBD \\
 \hline
-? Midterm 1 ? Tools, Program Stack, Structures, Pointers, Memory Allocation
-(February 14th [sorry!], 6:30?7:30pm, PHYS 114)
-? Midterm 2 ? Induction, Recursion, Sorting (March 7th, 6:30?7:30pm, PHYS 114)
-? Midterm 3 ? Dynamic data structures (April 19th, 6:30?7:30, PHYS 112)
-? Final ? Cumulative (TBD)
-\hline
+\end{tabulary}
+\end{table}
+
 If you need a change in either the test times or environment due to an excused University absence or an approved accommodation from the Purdue Disability Resource Center, it is your responsibility to contact the Professor two weeks prior to the exam so alternate arrangements can be made. 
 
 \paragraph{Course discussion} this term we will be using Piazza for class discussion. If you have questions about the course or the project, we encourage you to post them on Piazza. It's a shared discussion forum, where your question can be answered by the instructors, the TAs or your fellow students! Find our class's Piazza page at: https://piazza.com/purdue/summer2017/ece264/
@@ -105,13 +113,19 @@ Students who are active participants on Piazza, asking (or answering!) questions
 \end{enumerate}
 
 \paragraph{Course topics} below is the list of topics that will be covered in this course, and a rough estimate of how long we will spend on each. 
-Topic # of weeks
-Tools, program stack 2
-Data types, structures, pointers 2
-Memory allocation 1
-Induction and recursion 3
-Dynamic data structures: linked lists 2
-Dynamic data structures: trees 2
+\begin{table}[H]
+\centering
+\begin{tabulary}{\linewidth}{|c|c|} \hline
+Topic & Number of weeks \\ \hline
+Tools, program stack, Data types & 1 \\ \hline
+Structures, pointers, and memory allocation & 2 \\ \hline
+Recursion & 1.5 \\ \hline
+Dynamic data structures: linked lists & 1 \\ \hline
+Dynamic data structures: trees & 1 \\
+\hline
+\end{tabulary}
+\end{table}
+
 
 \paragraph{Academic honesty} unless expressly allowed, you are expected to complete all
 assignments by yourself. However, you are allowed to discuss general issues with other
@@ -123,3 +137,5 @@ students found sharing solutions will be reported to the Dean of students.}
 Punishments for academic dishonesty are severe, including receiving an F in the course or being expelled from the University. By departmental rules, all instances of cheating will be reported to the Dean. On the first instance of cheating, students will receive a 0 on the assignment; the second instance of cheating will result in a failure of the course. 
 
 \paragraph{Campus interruptions} in the event of a major campus emergency, course requirements, deadlines and grading percentages are subject to changes that may be necessitated by a revised semester calendar or other circumstances beyond the instructor's control. In such an event, information will be provided through the course website and email.
+
+\end{document}
