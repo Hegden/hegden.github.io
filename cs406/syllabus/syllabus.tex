@@ -1,0 +1,159 @@
+\documentclass{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{tabulary}
+\usepackage{float}
+\usepackage{lipsum}
+\begin{document}
+\begin{center}{\LARGE CS 406: Compilers} \end{center}
+\begin{center}{\large Spring 2020} \end{center}
+
+\bigskip
+
+\paragraph{Lectures}
+Mondays 4PM to 4:55PM, Wednesdays 8:30AM to 9:25AM and 2:30PM to 3:25PM, Room 211
+\paragraph{Course web page} https://hegden.github.io/cs406/
+\paragraph{Piazza discussion page} https://piazza.com/iitdh.ac.in/spring2020/cs406/
+
+\paragraph{Instructor}
+Nikhil Hegde (nikhilh@iitdh.ac.in)
+Office Hours: TBD
+
+\paragraph{Prerequisites}  A solid grounding in C/C++, Java or some other high level programming language. 
+A working knowledge of data structures. 
+A grasp of the basic fundamentals of Automata Theory and Computer Organization and architecture. 
+
+\paragraph{Textbooks / References} 
+\begin{enumerate}
+	\item Alfred V. Aho, Monica S. Lam, Ravi Sethi and Jeffrey D.Ullman: Compilers: Principles, Techniques, and Tools, 2/E, AddisonWesley 2007.
+	\item Fisher and LeBlanc: Crafting a Compiler in C. 
+	\item Andrew Appel: Modern Compiler Implementation in C/ML/Java, Cambridge University Press, 2004
+	\item Dick Grune, Henri E. Bal, Cerial J.H. Jacobs and Koen G. Langendoen: Modern Compiler Design, John Wiley & Sons, Inc. 2000.
+	\item Michael L. Scott: Programming Language Pragmatics, Morgan Kaufman Publishers, 2006.
+\end{enumerate}
+We will primarily be referring to textbook 1 and textbook 2 will be consulted often. Lecture notes will supplement the textbooks. 
+While I highly encourage you to purchase the textbook, it is not required.
+All lecture notes and supplements will be posted online.  
+
+\paragraph{Course outcomes} A student who successfully fulfills the course requirements will have demonstrated the ability to:
+\begin{enumerate}
+	\item Describe and explain the terminology, representation and use of formal languages and grammars; 
+	\item Describe and explain the terminology and techniques of lexical analysis, parsing, semantic actions and code generation; 
+	\item Design and implement a compiler for a small language based on their knowledge of the previous two points. 
+\end{enumerate}
+
+more specifically, after taking this course, you will be able to:
+\begin{itemize}
+	\item Explain the various passes of a compiler (scanners, parsers, semantic actions and code generation, register allocation and basic optimizations) and how they relate to the overall compilation process. 
+	\item Explain and implement the algorithms for each of these processes.
+	\item Be able to implement each of these passes and integrate them into a full compiler. 
+	\item Explain program analysis techniques that are used for code optimization, such as data?ow analysis, def-use analysis, liveness analysis, etc. 
+	\item Describe basic code transformations and their application to program optimization. 
+\end{itemize}
+
+\paragraph{Course assessment} The achievement of course objectives will be assessed through a combination of tests (2 paper-based exams (mid-sem and finals)) and a series of programming assignments (5 to 6). 
+The exams will test your understanding of the concepts covered in the class, while the programming assignments will test your ability to put those concepts into practice.
+
+\paragraph{Course grading} Grades will be assigned as follows:
+\begin{table}[H]
+\centering
+\begin{tabulary}{\linewidth}{|c|c|c|} \hline
+Score & Assessment & Comments \\ \hline 
+65\% & Exams & Mid-sem (25\%) and End-sem (40\%) \\ \hline
+32\% & Programming assignments (5-6) & Each assignment (except assignment 0) contributes equally from 6.4\%-5.33\% \\ \hline
+8\%  & Class participation  & Bonus\\ \hline
+\end{tabulary}
+\end{table}
+
+Note that the grading rubric adds up to 105\%. This is because a part of class participation points (5) function as bonus that can raise your grade for noteworthy contributions during class or in online discussions (see below re: Course Discussion). 
+Given your final numerical score, your course grade will be determined according to the following scale:
+\begin{table}[H]
+\centering
+\begin{tabulary}{\linewidth}{|c|c|} \hline
+If your numerical score is at least: & Your course grade will be at least: \\ \hline 
+90 & AA \\ \hline
+80 & AB \\ \hline
+70 & BB \\ \hline
+60 & BC \\ \hline
+50 & CC \\ \hline
+45 & CD \\ \hline 
+40 & DD \\ \hline
+\end{tabulary}
+\end{table}
+
+\paragraph{Programming assignments} 
+We will have biweekly programming assignments. 
+Importantly, these assignments build on top of previous assignments. 
+The assignments may involve writing a substantial amount of code depending upon the language you choose for implementation (C instead of C++). 
+Programming assignments must follow the below guidelines:
+\begin{itemize}
+\item \begin{flushleft}All programs must be compiled using the command:\end{flushleft} \linebreak gcc -std=c99 -g -Wall -Wshadow --pedantic -Wvla -Werror
+\item All programs should compile and run correctly on lab machines in Room 24/Room 120. It is your responsibility to make sure that your code works in that environment.
+\item Unless otherwise specified, all assignments are due at 11:59 PM on the deadline date.
+\end{itemize}
+
+Programming assignments will be submitted via GitHub Classroom (https://classroom.github.com). As such, you are required to have a GitHub account. These can be obtained for free at https://github.com.
+{\em You must also send your GitHub username to the Instructor latest by Wednesday, January 8th 2020. You must provide the details in a Google Form, the link for which will be posted on Moodle and Piazza. }
+
+\paragraph{Late submission policy} except for medical and family emergencies (accompanied by verification), there will be no individual extensions granted for programming assignments. Late submissions will be scaled according to lateness, docking 10\% from your score per day late, up to a maximum of 50\%. Submissions more than 5 days late will be assigned a score of 0.
+
+\paragraph{Exams} we will have two paper-based exams. 
+The exams are open book and open notes. 
+You may bring the course textbook as well as any written/printed notes/programs from lectures or otherwise. 
+{\em You may not use electronic devices in paper-based exams}.
+
+\paragraph{Exam topics and tentative dates}
+\begin{table}[H]
+\centering
+\begin{tabulary}{\linewidth}{|l|p{70mm}|p{40mm}|}\hline
+Exam & Topic & Week \\ \hline
+Midsem & Scanning, parsing, semantic routines, code generation &  24/2/20 to 28/2/20 \\ \hline
+Endsem & Register allocation, instruction scheduling, peephole optimizations, loop optimizations, and program analysis & 20/4/20 to 25/4/20 \\
+\hline
+\end{tabulary}
+\end{table}
+The exact dates and the venue for the exams will be communicated by the academic office.
+If you need a change in either the test times or environment due to an excused University absence or an approved accommodation from Dean AP's office, it is your responsibility to contact the Professor two weeks prior to the exam so alternate arrangements can be made. 
+
+\paragraph{Course discussion} this term we will be using Piazza for class discussion. If you have questions about the course or the project, we encourage you to post them on Piazza. It's a shared discussion forum, where your question can be answered by the instructors, the TAs or your fellow students! Find our class's Piazza page at: https://piazza.com/iitdh.ac.in/spring2020/cs406/
+
+Students who are active participants on Piazza, asking (or answering!) questions are eligible for class participation bonus points.
+
+\paragraph{Email} Questions about course material or programming assignments should be posted to Piazza or raised during lecture or office hours. {\em The Professor will not answer programming questions via email.} This is to allow other students who might have similar questions to benefit from our answers. Of course, if you have questions of a personal or confidential nature, we welcome your email.
+
+\paragraph{Course announcements} Homework assignment links will be distributed via Moodle/Piazza announcements and grades will be posted on Moodle. Other course announcements, including changes in due dates, course topics, programming assignment details, etc., will be communicated in three ways:
+\begin{enumerate}
+\item Updates to the course webpage.
+\item Announcement posts on Moodle and Piazza.
+\item Email announcements.
+\end{enumerate}
+
+\paragraph{Course topics} below is the list of topics that will be covered in this course, and a rough estimate of how long we will spend on each. 
+\begin{table}[H]
+\centering
+	\begin{tabulary}{\linewidth}{|c|c|c|} \hline
+		Topic & Number of weeks & Reading \\ \hline
+		Structure of a compiler (introduction, overview) & 1 & Chapter 1\\ \hline
+		Scanning & 1 & Chaper 3 \\ \hline
+		Parsing & 1.5 & Chapters 4 and 5 \\ \hline
+		Semantic routines (symbol tables, AST)  & 1 & Chapters 5 and 6\\ \hline
+		Code generation (3 address code, basic optimizations) & 1 & Chapters 2 and 8 \\
+		Instruction scheduling and Register allocation & 1 & Chapter 8
+		Optimizations (Code motion, strength reduction) & 1 & Chapter 9 
+		Control and Dataflow analysis & 2.5 & Chapters 8, 9 and lecture notes
+		Parallelism (instruction level parallelism, optimizing for parallelism) & 1 & Chapter 10, lecture notes  
+\hline
+\end{tabulary}
+\end{table}
+
+
+\paragraph{Academic honesty} unless explicitly allowed, you are expected to complete all
+assignments by yourself or as a team when teams are allowed. 
+However, you are allowed to discuss general issues with other
+students (programming techniques, clearing up confusion about requirements, etc.).
+You may discuss particular algorithmic issues on Piazza (but do not copy code!). {\em We will
+be using software designed to catch plagiarism in programming assignments, and all
+students found sharing solutions will be reported to the Dean of students.}
+
+Punishments for academic dishonesty are severe, including receiving an F in the course or being expelled from the University. By departmental rules, all instances of cheating will be reported to the Dean. On the first instance of cheating, students will receive a 0 on the assignment; the second instance of cheating will result in a failure of the course. 
+
+\end{document}
