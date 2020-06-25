@@ -1,1 +1,8 @@
 .tab { margin-left: 80px; }
+#wrapper {
+    position: relative;
+}
+#wrapper div, #wrapper video {
+    position: absolute;
+    top: 0;
+}
