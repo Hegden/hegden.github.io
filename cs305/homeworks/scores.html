@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <base target="_top">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        window.onload = function() {
+            google.script.run.withSuccessHandler(function(user) {
+                document.getElementById("currentUser").innerHTML = 'Current User: ' + user;
+            }).currentUser();
+
+            google.script.run.withSuccessHandler(function(userData) {
+                document.getElementById("dataTable").innerHTML = userData;
+            }).getData();
+        }
+    </script>
+</head>
+<body>
+    <div class="container center">
+        <div class="row">
+            <div class="col s12">
+                <h4 class="light"><br /></h4>
+                <h4 class="light" id='currentUser'></h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12">
+                <div id='dataTable'>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
