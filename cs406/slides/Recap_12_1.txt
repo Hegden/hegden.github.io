@@ -1,0 +1,35 @@
+We were looking at scanners in the class on 12_1.
+We started with why we need scanners? what are some of the advantages of having scanning as a separate stage?
+What inputs do scanners expect and what output do they produce?
+What are the major tasks of scanners? place dividers and classify substrings.
+While doing this, what are the things that scanners must do: scan characters and do look-ahead. 
+We inferred the last two while looking at examples of different PLs.
+We did not look at lower-level implementation details of scanning and look-ahead.
+
+Then we got started with how we specify different classes / loosely called tokens? using regular expressions.
+Following this, we briefly looked at regular expressions. 
+Regular expressions are a way to define regular languages and a language is a set of strings. A language is always defined over a set of characters called alphabet or vocabulary. 
+The strings belonging to the language are a sequence of characters drawn from this set. 
+So, regular expressions define a set of strings.
+We then used regular expressions to define the classes of strings. 
+Immediately after this, I Introduced you to scanner generators.
+
+A brief summary of regular expressions follows:
+regular expressions can be thought of as a syntax to specify a set of strings.
+Standard definition of regular expressions has 5 kinds. 2 base types and 3 compound types. Later on, some short-hand notations were introduced.
+The base types are: 1) single character set indicated by 'c' where c is part of the alphabet and 2) epsilon, the set of empty string. Note that this is not a language with no strings (or empty set). This is a language with one string that is empty.
+The compound types are: Union, Concatenation, and Kleene Closure. 
+Union is denoted by the expression A + B. This expression denotes the union of the set of strings belonging to Language expressed by A and the set of strings belonging to Language expressed by B.
+Concatenation is denoted by the expression AB. This expression denotes the concatenation of the set of strings belonging to Language expressed by A and the set of strings belonging to Language expressed by B. 
+The concatenation is done by taking the cross product i.e. any string from language A can be concatenated with any string from Language B.
+Kleene Closure is denoted by A*. This is equivalent to the set {epsilon, A, AA, AAA, ... A....A i times, where i>=0} 
+Later introduction to the list of expressions include:
+One or more instances denoted by A+
+Zero or one instance denoted by A?
+Character classes are a shorthand notation denoted by [a1-an] which is equivalent to a1+a2+...+an, where a1 to an are from the set of alphabets. 
+
+
+Today and tomorrow:
+Connect the dots between regular expressions, scanner generator, and scanner.
+Demo of a scanner generator
+What is 'regular' about regular languages? Notion of Formal Languages.
