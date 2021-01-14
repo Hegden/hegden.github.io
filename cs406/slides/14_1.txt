@@ -1,0 +1,16 @@
+Class on 14_1. 
+Started discussing Quiz_13_1, which asked to write a regular expression for matching different names of the festival Sankranti celebrated all over India beginning from 13_1.
+There was confusion when I mentioned that in the regular expression (P+o+n+g+a+l), the '+' denotes choice (either P or o or n or g or a or l is matched). 
+I corrected this soon after later and would like to assert that + always denotes "one or more occurances". So, the previous expression would match strings such as Pongal or PPongal or PPoongal or PPonngal and so on..
+We also discussed other expressions such as (P*o*n*g*a*l*), which would match 0 or more occurances of the character preceding *
+An interesting expression was (P+o+n+g+a+l)^+. Someone suggested that the ^ was a typo.
+
+We then moved on to discussing Formal Languages, although very briefly. Regular Languages are an example of Formal Languages. During compiler construction, we may need to manipulate many Formal Languages and hence, it is useful to know
+about them. 
+
+Following this, we started discussing Finite automata, NFAs, their advantages (intuitive, concise, close match to regexps) and disadvantages (slow in running due to a potential for path explosion).
+DFAs were then introduced to avoid the problem of NFAs and we saw with an example how NFA can be converted to optimized DFA
+
+  
+Next class:
+Constructing Optimized DFAs, Implementing DFAs, Error handling, Introduction to Parser
