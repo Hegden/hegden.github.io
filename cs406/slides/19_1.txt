@@ -1,0 +1,16 @@
+Class on 19_1. 
+After discussing last week's sessions briefly (scanner, regular expressions, translating regexps to code), we resumed our discussion on how to translate regular expressions to code. We move from regular expressions to NFAs (since we know how to construct NFA starting from basic regular expressions of epsilon, single character set, concatenation, choice, and Kleene closure). 
+
+NFAs are those automatons having epsilon/lambda transitions or present us with a choice of states upon reading an input alphabet. Example 2 has two choices (goto state A or B when reading the same input character 0).
+Hence, example 2 is an NFA. We also know that because of this reason (choice of states), when we run an input string through an NFA, we might end up with an exponential number of states to keep track of for all the choices presented while running the input. Hence, NFA implementations are slow to run. However, they are compact i.e. take less memory.
+
+DFAs overcome one of the problems of NFAs (slowness) by presenting atmost one state to transition to upon reading an input. However, after converting an NFA to DFA we might end up with 2^N states, where N is the number of states in the original NFA. This presents a problem of taking up too much memory. Hence, we need to optimize the DFA and merge those states that are equivalent.
+Two states are equivalent if for any string that belongs to the language of all possible strings using the alphabet of that language (such language is called SIGMA *), if one accepts the other state also accepts (when the input is run through the DFA with starting state as those two states). 
+
+We also looked up a second method of reducing DFAs using the Split node approach. 
+
+We saw briefly what modifications to the DFA need to be done in order to handle lookahead. We ended by discussing why it is a good idea to have separate token classes for keywords of a language rather than grouping all keywords into one token class such as 'KEYWORD'. 
+
+  
+Next class:
+Parsers
