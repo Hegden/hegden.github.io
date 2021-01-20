@@ -1,0 +1,25 @@
+Class on 20_1. 
+We started discussing parsers, which are also called as syntax analyzers (Recall:scanners are called lexical analyzers). 
+Parsers take as input a sequence of tokens and determine if there is a structure to those tokens and if so what is that structure.
+In other words they determine: i) if a program is syntactically valid ii) if so, what is the structure of the program?
+
+We saw that lexical analyzers required a formal specification or syntax for describing definition of tokens. That formal specification was regular expressions.
+Can we use the same formal specification to describe the structure of a program? i.e. can we use regular expressions here?
+it turns out that we can't because regular expressions are weak i.e. they can't count e.g. we can't use regular expressions to describe a valid nested parenthesis arithmetic expression. Because we need to match the number of opening parenthesis with closing parenthesis. 
+In Programming languages, we often encounter this structure of nested recursive constructs. e.g. if statement in C/C++. we can nest arbitrary number of if statements within one another with { and matching }.
+Hence, programming languages such as C/C++ and even the English language can't be regular languages (i.e. can't be described using regular expressions).
+We need a stronger way of formally specifying such constructs. In comes context-free grammars (CFGs).
+
+We then saw notations of CFGs, languages specified by CFGs and a brief mention of context-sensitive grammars.
+Through CFGs, we can formally specify programming constructs of a language. So, a parser can process CFG to determine whether a program is syntactically valid i.e. it belongs to the set of legally allowed programs in that language.
+In addition, we need parsers to also tell us something about the structure of the program so that we can analyze it later to validate for programming language features that are not possible to describe using CFGs.
+This structure is called Parse trees. 
+
+We saw how parse trees look like: Interior nodes are 'non-terminals' symbols that appear on the left-hand side of a production in the grammar of the language. A production is a programming construct in the language e.g. an if statement.
+Leaf nodes in the tree are 'terminals' or tokens e.g. { ( } ) 'if' etc.  
+
+We also briefly looked at how we could get a parse tree: as we transform the 'start' symbol repeatedly to derive the string that we are trying to match, we apply productions. Those productions i.e. the sequence in which different produuctions are applied define the structure of the parse tree. 
+  
+  
+Next class:
+Parsers - parse tree derivations, error handling, top-down parsing.
