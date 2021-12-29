@@ -1,0 +1,22 @@
+Class on 21_1. 
+We continued our discussion on Parse Trees, ambiguities in grammar and ways to handle ambiguity.
+We saw the construction of parse trees using left-derivation or right-derivation methods. There could also be other methods but these two are most popular.
+No matter what the method is we should get a unique parse tree for a string. However, there are strings for which there exist more than one parse tree. The grammars having productions with which more than one parse tree can be derived for the same string are called ambiguous grammars.
+
+Left-derivation is replacing the left-most non-terminal in the string starting from the start symbol S. Similarly, right-most derivation is replacing the right-most non-terminal in a string until there are no more non-terminals left.
+Every parse tree has a left-most and right-most derivation. 
+
+We could handle ambiguity in grammars by rewriting the grammar, which is a manual process and could make the grammar more complicated.   
+We could also let the tool (parser generator) handle ambiguity and let the tool know that such an ambiguity exists. In Bison, we use the "%left PLUS" declaration to do this.
+
+Since a compiler's job is also detecting invalid programs (Apart from compiling valid programs), we discussed possible types of errors in programs - lexical, syntax, semantic, logical.
+We also discussed methods of handling errors - 1)panic mode, 2)error productions, and 3)automatic local/global correction.  
+The first two methods are popular and still used today. Third method was popular earlier when compilation process was costly (took almost an entire day to see the result of compilation).
+In panic mode, you insert a special grammar rule / production having 'error' keyword (in Bison). 'error' is a terminal and can be thought of as a wildcard entry matching any token seen in input.
+In error productions, you anticipate common programmer errors (e.g. typing 2 x instead of 2* for multiplication) and write grammar rules to handle those situations.
+In local/global corrections, you try to recover and rewrite the program. You are not sure if the resulting rewritten program is equivalent to the original one here.
+
+While deriving strings, we chose production rules without justifying why we chose those rules. This is discussed in detail in subsequent classes.
+  
+Next class:
+Parsing methods - top-down, bottom-up

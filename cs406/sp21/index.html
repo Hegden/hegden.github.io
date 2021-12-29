@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>CS406</title>
+		<!-- link to main stylesheet -->
+		<link rel="stylesheet" Type="text/css" href="/cs406/cs406.css">
+	</head>
+	
+<body>
+       	<h1><center>CS406+CS316: Compilers (Theory + Lab)<center></h1>
+	<h2><center>Spring 2021 (off-campus based instruction)</center> </h2>
+	<h3><center> Live / Online sessions only - Tuesdays (10:30AM - 11:15AM), Wednesdays (8:30AM to 9:15AM), and Thursdays (9:30AM to 10:15AM)</center> </h3>
+	<br>
+<div style="background-color:black"><h2><font color="white">About the Course</font></h2></div>
+<h3>Description:</h3> <p>This course focuses on the principles of compiler design and implementation. Topics include:
+<ul>
+<li>Scanning and parsing: determining the syntactic structure of a program </li>
+<li>Semantic routines: determining the semantics of a program and building intermediate representation</li>
+<li>Code generation: emitting equivalent assembly code for the program</li>
+<li>Optimizations: improving the performance of a program</li>
+<li>Program analysis: determining interesting information about program's behavior</li>
+</ul>
+</p>
+
+<h3>Details:</h3> 
+The course <a href="syllabus.pdf">syllabus</a> discusses most of the details of the course, including a tentative schedule of topics, exam dates, and other administrative information. Announcements, assignment links, and discussion will be posted on the GitHub-Teams discussion page. If you have a question about a concept covered in lecture or about a detail of an assignment, check the discussion page first!
+
+<h3>Instructor:</h3><p class="tab"> Nikhil Hegde <br>
+nikhilh 'at' iitdh 'dot' ac 'dot' in<br>
+Office hour (doubt clearing session): On demand online sessions based on the availability of student(s) and the instructor<br></p>
+
+<h3>TAs:</h3><p class="tab"> Priya Hampannavar, Gayatri Rayar<br>
+{priyash, gayatri 'dot' rayar} 'at' iitdh 'dot' ac 'dot' in, <br>
+Office hour (doubt clearing session): On demand online sessions based on the availability of student(s) and the TAs</p>
+
+<div style="background-color:black"><h2><font color="white">Lecture Schedule and Notes</font></h2></div>
+The slides are based on those designed by <a href="https://engineering.purdue.edu/~milind/ece468/2017fall/">Prof. Kulkarni</a> and <a href="https://web.stanford.edu/class/cs143/">Prof. Aiken</a>  
+<ul>
+	<li> Week 1 (5/1 - 7/1): Syllabus, Course Overview, Structure of a Compiler; <a href="slides/week1.pdf">Slides</a>  </li>
+	<li> Week 2 (12/1 - 14/1): Lexical Analyzer, Regular Sets, Finite Automata <a href="slides/week2.pdf">Slides</a>. Flash-cards - <a href="slides/12_1.txt">12_1</a>, <a href="slides/13_1.txt">13_1</a> <a href="slides/14_1.txt">14_1</a></li>
+	<li> Week 3 (19/1 - 21/1): Scanners (implementation), Parsers <a href="slides/week3.pdf">Slides</a>.  <a href="slides/parser_demo.zip">Parser_Demo_Files</a>.  Flash-cards - <a href="slides/19_1.txt">19_1</a>, <a href="slides/20_1.txt">20_1</a>, <a href="slides/21_1.txt">21_1</a>.</li> 
+	<li> Week 4 (28/1): Parsers - Top-down parsing and table driven method; <a href="slides/week4.pdf">Slides</a>  </li>
+	<li> Week 5 (2/2 - 4/2): Parsers - Top-down parsing (Contd.) and Bottom-up Parsers; <a href="slides/week5.pdf">Slides</a>  </li>
+	<li> Week 6 (9/2 - 11/2): Parsers LR(k), Semantic Processing ; <a href="slides/week6.pdf">Slides</a>  </li>
+	<li> Week 7: 16/2-(No class), 17/2- Midterm review: (<a href="slides/Midterm_Review_Solutions.pdf">solutions</a>), 18/2-IR code generation: <a href="slides/week7.pdf">Slides</a> </li>
+	<li> Week 9 (2/3 - 4/3): IR Code generation - recap, loops, switch statements, and functions; <a href="slides/week9.pdf">Slides</a>  </li>
+	<li> Week 10 (9/3, 10/3): IR Code Generation (Functions), Local Optimizations; <a href="slides/week10.pdf">Slides</a>  </li>
+	<li> Week 11 (16/3-18/3): Register Allocation, Instruction Scheduling <a href="slides/week11.pdf">Slides</a>, Global register allocation (slides from Prof. Andrew Myers):<a href="slides/global_reg_allocation_andrew_myers.pdf">Slides</a></li>
+	<li> Week 12 (23/3 - 25/3): Control flow graphs, Dataflow analysis (liveness) <a href="slides/week12.pdf">Slides</a></li>
+	<li> Week 13 (30/3 - 1/4): More dataflow analysis <a href="slides/week13.pdf">Slides</a></li>
+	<li> Week 14 (6/4, 8/4): Dataflow analysis (Recap), Higher-level loop optimizations <a href="slides/week14.pdf">Slides</a>, Dependence Analysis (slides from Prof. Milind Kulkarni):<a href="slides/lecture13.pdf">Slides</a></li>
+	<li> Finals review: <a href="slides/FinalsReview.pdf">slides</a> </li>
+</ul>
+
+<div style="background-color:black"><h2><font color="white">Homework Assignments and Exams</font></h2></div>
+All homework assignments are due at 11:59PM unless otherwise announced. Assignment and exam details will be posted during the semester. 
+<br>
+<ul>
+	<li> Programming assignment 1 (CS316): GitHub and Git overview, Environment Setup, Makefiles, Scanner <a href="homeworks/PA1.pdf">PA1</a>. Due: 20/1/2021</li> 
+	<li> Homework assignment 1 (CS406): Regular Expressions, Automata, Tries <a href="homeworks/CS406HA1.pdf">CS406HA1</a>. Due: 31/1/2021</li> 
+	<li> Programming assignment 2 (CS316): Parsers <a href="homeworks/PA2.pdf">PA2</a>. Due: 3/2/2021</li> 
+	<li> Programming assignment 3 (CS316): Semantic Routines - I and Symbol Table <a href="homeworks/PA3.pdf">PA3</a>. Due: <s>1/3/2021</s> 4/3/2021<a href="slides/lab5.pdf">Slides</a></li> 
+	<li> Mid-term exam (CS406) (26/2): <a href="homeworks/midterm.pdf">Midterm</a>. </li> 
+	<li> Programming assignment 4 (CS316): Semantic routines (statements - assignments, READ/WRITE, if) <a href="homeworks/PA4.pdf">PA4</a>. Due: <s>17/3/2021</s> 19/3/2021 </li> 
+	<li> Homework assignment 2 (CS406): Semantic Routines, Functions, Register Allocation <a href="homeworks/CS406HA2.pdf">CS406HA2</a>. <a href="homeworks/CS406HA2_solutions.pdf">Solutions</a> Due: <s>23/3/2021</s> 29/3/2021 </li> 
+	<li> Programming assignment 5 (CS316): For loop and Functions <a href="homeworks/PA5.pdf">PA5</a>. Due: 31/3/2021 </li> 
+	<li> Programming assignment 6 (CS316): Register allocation <a href="homeworks/PA6.pdf">PA6</a>. <s>Due: 11/4/2021</s> 16/4/2021</li> 
+</ul>
+
+</body>
+</html>
+
+
+

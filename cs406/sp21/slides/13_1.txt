@@ -1,0 +1,18 @@
+Class on 13_1. 
+Started connecting the dots between regular expressions, scanner generator, and scanner: regular expressions serve as formal specifications or syntax for capturing the definitions of token classes (e.g. identifiers are a small letter followed by any sequence of small letter or a digit). These formal notations are necessary to accurately capture the meaning of what strings should belong to a class and what strings should not. 
+These formal specifications need to be transformed into code that is able to tokenize program text. While doing so, we could take help from a tool that generates scanner code OR we could code it up ourselves. 
+The details of transformation procedure were hidden and shown as a black-box in the slides.  
+
+We then looked at an example of a scanner generator tool, Flex. A demo followed, which explained:
+- %option yywrap - for satisfying the scanner requirement of implementing a function called yywrap(), within which a scanner implementor tells what happens when an input stream is done processing.
+- the role of main() function and yylex() as entry point for lexer. 
+- yyin as a built-in variable to point to the data source either stdin or a file.
+- processing a comma separated values (CSV) file. CSV file was deliberately chosen to show that lexical analyzers are not just limited to program text. They can be used to process regular data having nice formats such as CSV records.
+- how a rule is specified. yytext holds the currently matched token (token is a loose term.substring is accurate.). 
+- counting number of lines.
+- why is the buffer dumped on the stdout when the . rule is not specified in counting lines program. This was left as a TODO.
+
+Following this demo, we switched back to presentation and the internals of the black-box that transforms regexps to code was shown. It consists of NFAs, DFAs, and reduced DFAs.
+  
+Next class:
+Super-short description of formal languages.
