@@ -1,0 +1,60 @@
+--A micro program begins with the PROGRAM .. BEGIN construct and ends with END construct.
+
+PROGRAM nested
+BEGIN
+
+    --comments begin with --. There are no multi-line comments.
+
+    --global declarations follow
+
+    --strings must be initialized at the time of declaration	
+    STRING dummy := "abcde";  
+
+    INT i, j, k;
+    
+
+    --function definitions follow. 
+
+
+    FUNCTION INT F (INT n)
+    BEGIN
+        INT n1=5;
+        
+    END
+
+
+
+    --main function is the entry point
+
+    FUNCTION VOID main()
+    BEGIN
+        i := 0;
+        j := 0;
+        k := 0;
+        result := 0;
+
+	
+	--if-else construct in micro
+        IF (i > j)
+            RETURN 0;
+        ELSE
+            RETURN 1;
+        FI            
+
+
+	--for construct in micro.
+        FOR ( ; i <= 99; i := i + 1)
+                    result := result + 1;
+        ROF
+
+	--write statement is the printf of Micro language.
+        WRITE (result);
+	
+	--READ is the scanf
+        READ(p);
+	
+	--declarations cannot go anywhere in the function body. They must be at the beginning of a block.
+	INT p;
+
+    END
+END
