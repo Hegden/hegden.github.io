@@ -1,0 +1,119 @@
+	1D Heat Equation: Program Representation	
+
+We have decided to design classes Domain, GridFn, and Solution. Our motivation for this is as follows:
+
+Origin of grids: You have a domain, you divide/discretize the domain into cells or grid points. You have a PDE, a mathematical model of a process or some characteristic of the domain. The PDE is a continuous function. Hence, you cannot numerically compute it. So, you approximate the PDE using various techniques. We have been seeing finite difference method.
+
+You can have different grid functions operating on the same grid. In fact, the purpose a grid exists is to let a grid function operate on it. So, make GridFn a separate class and make GridFn (pointer/reference) object an attribute of Domain class. (You could design a Grid class.. but in my design, I go without that and represent the grid inside the Domain class.) 
+
+A domain is more than a just the grid. There are other attributes of the Grid such as step size, and coordinate values that go as attributes of the Domain class. 
+
+The Grid and GridFn help you arrive at a numerical solution, the accuracy of which depends on initial and boundary conditions. The boundary conditions can be Dirichlet, Neuman, or Robin. If a boundary condition other than Dirichlet is used, then every iterative step, you will have to recompute the boundary condition. Summarizing, the boundary condition and initial condition affect the behavior of the solution without affecting the grid attributes or GridFn. Hence, they are specified as 'behavior' or methods or member functions of the Solution class.
+
+We have a pseudocode of the solution outline in slide 42.
+
+Looking back at the requirements in slide 38, we start designing the features of our solution: classes Domain, GridFn, and Solution.
+
+What is my grid step size? deltax
+
+What is my grid dimension ? 1D or 2D? 1D
+
+Question: should I template my class Domain to accommodate different dimensions? No. 
+
+class Domain{
+public:
+	Domain(){};
+	void GenerateGrid(const int isize[DIMENSION]);
+
+private:
+	int numPoints[DIMENSION]; // C-style array to store the number of grid points along each dimension
+	
+	//could also use STL's std::array<int, DIMENSION> size; //don't forget to add #include<array>
+	
+}
+
+Question: Where does DIMENSION need to be defined and how? as a macro. #define DIMENSION 1 at some place before the class decl.
+
+Now we know the number of points on the grid on each dimension. Store the coordinates.
+
+Question: should I template my class Domain to accommodate different types for coordinate values? use double to store coordinates (mostly sufficient). 
+
+Question: should I template my class Domain to accommodate different types for grid function values? double or single-precision solution may be desired. Hence, template the class.
+
+Question: what type should I use for step size? Not different from types of coordianate values.
+
+//note the specification of default value template parameter. How do you use? 
+  
+template<class T=double>
+class Domain{
+public:
+	Domain(){};
+	void GenerateGrid(const int isize[DIMENSION]);
+
+private:
+	int numPoints[DIMENSION]; // C-style array to store the number of grid points along each dimension
+	//could also use std::array<int, DIMENSION> size; //don't forget to add #include<array>
+	
+	double* coord[DIMENSION]; //to store the coordinate values along each dimension
+	//could also use a Point class to model points
+
+	T* uval; //to store the grid function values
+
+	double stepSize[DIMENSION];
+};
+
+ 
+How do we define an object of type Domain?
+Domain<float> dsingle; //specifies that the object created has type float for the uval attribute---the data structure used to store the values computed by function u.
+Domain d;  //does not compile mostly. C++20 onwards?
+Domain<> ddouble; //specifies that the object created has type double/default argument for the uval attribute---the data structure used to store the values computed by function u.
+
+//Now we define the member function GenerateGrid
+void Domain<T>::GenerateGrid(const int isize[DIMENSION]) {
+
+	//initialize the number of grid points along each dimension x,y,z...	
+	for(int i=0;i<DIMENSION;i++)
+		numPoints[i]=isize[i];
+
+	//allocate memory for storing coordinate values. Now you have a task to do in the destructor. 
+	//Question: What is it?
+	for(int i=0;i<DIMENSION;i++)
+		coord[i]=new double[numPoints[i]];
+
+	//allocate memory to store grid function values
+
+	int totalNumPoints=1; //temporary: for computing the total number of points in the grid
+	
+	//compute total number of points
+	for(int i=0;i<DIMENSION;i++)
+		totalNumPoints*=numPoints[i];
+
+	//Note the use of type double to store grid function values.
+	uval= new T[totalNumPoints];
+
+}
+
+//Destructor
+Domain<T>::~Domain() {
+	for(int i=0;i<DIMENSION;i++)
+		delete [] coord[i];
+	delete [] uval;	
+}
+
+//You have made provision to identify grid points. Now compute/store the coordinate values. 
+void Domain<T>::SetStepSize(const double step[DIMENSION]) {
+	//initialize the step size attribute	
+	for(int i=0;i<DIMENSION;i++)
+		stepSize[i]=step[i];
+
+	//compute step size.
+	int j=0;
+	for(int i=0;i<DIMENSION;i++) {
+		coord[i][0]=0;
+		double tmpStepSize=step[i];
+		for(j=1;j<numPoints[i];j++)
+			coord[i][j]=coord[i][j-1]+tmpStepSize;
+	}
+}
+
+	

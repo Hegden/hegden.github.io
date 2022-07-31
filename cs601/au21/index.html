@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>CS601</title>
+		<!-- link to main stylesheet -->
+		<link rel="stylesheet" Type="text/css" href="/cs406/cs406.css">
+	</head>
+	
+<body>
+       	<h1><center>CS601: Software Development for Scientific Computing<center></h1>
+	<h2><center>Autumn 2021</center> </h2>
+	<h3><center> Tuesdays (11:30AM - 12:30PM), Wednesdays (9:30AM to 10:30AM), and Thursdays (11:30AM to 12:30PM)</center> </h3>
+	<br>
+<div style="background-color:black"><h2><font color="white">About the Course</font></h2></div>
+<h3>Description:</h3> <p>This course focuses on software development skills in the context of dominant algorithmic patterns found in scientific computing. Topics include:
+<ul>
+<li>Exploring tools that cross most disciplines (build tools, version control tools, compilers, debugging tools, profiling tools etc.)</li>
+<li>Dominant algorithmic patterns found in dense and sparse linear algebra, structured and unstructured grid methods, tree-based codes, particle methods, FFTs, and PDEs</li>
+<li>Selected topics in C++ Programming, Asymptotic analysis, perfomance tuning </li>
+</ul>
+</p>
+
+<h3>Details:</h3> 
+The course <a href="syllabus.pdf">syllabus</a> discusses most of the details of the course, including a tentative schedule of topics, exam dates, and other administrative information. Announcements, assignment links, and discussion will be posted on the GitHub-Teams discussion page. If you have a question about a concept covered in lecture or about a detail of an assignment, check the discussion page first!
+
+<h3>Instructor:</h3><p class="tab"> Nikhil Hegde <br>
+nikhilh 'at' iitdh 'dot' ac 'dot' in<br>
+Office hour (doubt clearing session): On demand online sessions based on the availability of student(s) and the instructor<br></p>
+
+<h3>TAs:</h3><p class="tab"> Gayatri Rayar<br>
+{gayatri 'dot' rayar} 'at' iitdh 'dot' ac 'dot' in, <br>
+Office hour (doubt clearing session): On demand online sessions based on the availability of student(s) and the TAs</p>
+
+<div style="background-color:black"><h2><font color="white">Lecture Schedule and Notes</font></h2></div>
+
+<ul>
+	<li> Week 1 (2/8 - 5/8): Syllabus, Course Overview -  <a href="slides/Week1.pdf">Slides</a>, <a href="https://www.cs.cmu.edu/~15110-s13/Wing06-ct.pdf">Computational Thinking</a>,  <a href="slides/week1_codesamples.zip">CodeSamples</a></li> 
+	<li> Week 2 (10/8 - 12/8): Program Development Environment, C++ Getting Started, Structured Grids -  <a href="slides/Week2.pdf">Slides</a></li> 
+	<li> Week 3 (17/8 - 18/8): Structured Grids (contd..), Intermediate C++ (namespaces, information hiding, streams) -  <a href="slides/Week3.pdf">Slides</a>, <a href="slides/week3_codesamples.zip">CodeSamples</a></li> 
+	<li> Week 4 (24/8 - 26/8): Tools (Git, Make), Intermediate C++ (OO concepts, Templates) -  <a href="slides/Week4.pdf">Slides</a>, <a href="slides/week4_codesamples.zip">CodeSamples</a></li> 
+	<li> Week 5 (31/8 - 2/9): Intermediate C++ (template programming, elliptic PDEs) -  <a href="slides/Week5.pdf">Slides</a>, <a href="slides/week5_codesamples.zip">CodeSamples</a></li> 
+	<li> Week 6 (7/9 - 9/9): Elliptic PDEs (contd..), Program representation -  <a href="slides/Week6.pdf">Slides</a>, <a href="slides/9_9_notes.txt">Notes(9/9)</a></li> 
+	<li> Week 7 (14/9 - 16/9): Unstructured Grids, Tools (GDB), Review (for midsem exam) -  <a href="slides/Week7.pdf">Slides</a>, <a href="slides/week7_codesamples.zip">CodeSamples(gdbdemo)</a></li>
+	<li> Week 8 : Midsem exams (no classes)</li>
+	<li> Week 9 (28/9 - 30/9): Discussion (Midsem exam), Finite Element Method, Prof. Amar Gaonkar's lecture -  <a href="slides/Week9.pdf">Slides</a> <a href="slides/30_9_Notes.pdf">30_9_Notes</a></li>
+	<li> Week 10 (5/10 - 7/10): Finite Element Method (Prof. Amar Gaonkar's lectures) -  <a href="slides/5_10_Notes.pdf">5_10_Notes</a>, <a href="slides/6_10_Notes.pdf">6_10_Notes</a>, <a href="slides/7_10_Notes.pdf">7_10_Notes</a></li>
+	<li> Week 11 (12/10 - 14/10): Guest Lecture (Juthi Kiran Prasad  - Mentor/Siemens, Hyderabad) <a href="slides/AgileIITDh.pdf">Agile Methodologies</a>, Particle Methods (N-Body Simulation) -  <a href="slides/Week11.pdf">Slides</a></li>
+	<li> Week 12 (20/10 - 21/10): Particle Methods (Barnes-Hut, FMM) -  <a href="slides/Week12.pdf">Slides</a></li>
+	<li> Week 13 (26/10 - 28/10): Particle Methods (FMM), Matrix Algebra -  <a href="slides/Week13.pdf">Slides</a>, <a href="slides/week13_codesamples.zip">CodeSample (row-major vs. col-major)</a></li>
+	<li> Week 14 (2/11 - 3/11): Matrix Algebra -  <a href="slides/Week14.pdf">Slides</a>, <a href="slides/MM_Notes.zip">Matrix Multiplication Loop Orderings (notes)</a></li>
+	<li> Week 15 (9/11 - 10/11): Matrix Algebra and FFT -  <a href="slides/Week15.pdf">Slides</a></li>
+</ul>
+
+<div style="background-color:black"><h2><font color="white">Homework Assignments and Exams</font></h2></div>
+All homework assignments are due at 11:59PM unless otherwise announced. Assignment and exam details will be posted during the semester. 
+<br>
+Instructions for getting familiar with test/development environment (Linux) are <a href="slides/remote_login.pdf">here</a> 
+<ul>
+	<li> Programming assignment 1: Environment setup - GitHub and Git overview, The error function (erf) implementation in C++ <a href="homeworks/PA1.pdf">PA1 (corrected)</a>. Due: 31/8/2021</li> 
+	<li> Programming assignment 2: Structured grids and PDEs - implementation in C++ <a href="homeworks/PA2.pdf">PA2</a>. Due: 20/9/2021</li> 
+	<li> Midsem exam and Programming assignment 3: Floating point representation, Computational thinking, C++ programming, tools (GDB, Make, Git), Structured grids, and Unstructured grids (Delaunay triangulation) <a href="homeworks/Midsem.pdf">Midsem</a>. On: 24/9/2021</li> 
+	<li> Bonus: ERF Function (accurate) <a href="homeworks/PA1Bonus.pdf">PA1</a>. Due: 6/10/2021</li> 
+	<li> Programming assignment 4: Unstructured grids and FEMs - implementation in C++ <a href="homeworks/PA4.pdf">PA4</a>. Due: 7/11/2021</li> 
+	<li> Sample Quizzes and solutions: <a href="homeworks/27_10.pdf">27/10</a>, <a href="homeworks/14_10.pdf">14/10</a></li> 
+</ul>
+
+</body>
+</html>
+
+
+
