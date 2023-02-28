@@ -1,4 +1,5 @@
 #!/bin/bash
+rm -rf inputs outputs
 unzip inputs.zip
 g++ -w tinyNew.C -o tiny
 echo "[*] make compiler"
