@@ -2,7 +2,7 @@
 rm -rf inputs outputs
 unzip inputs.zip
 unzip outputs.zip
-g++ -w tinyNew.C -o tiny
+g++ -w tinyNew.cpp -o tiny
 echo "[*] make compiler"
 make compiler
 if [ $? -ne 0 ]
