@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>CS601</title>
+		<!-- link to main stylesheet -->
+		<link rel="stylesheet" Type="text/css" href="/cs601/cs601.css">
+	</head>
+	
+<body>
+       	<h1><center>CS601: Software Development for Scientific Computing<center></h1>
+	<h2><center>Autumn 2022</center> </h2>
+	<h3><center> Mondays (8:30AM - 9:30AM), Tuesdays (9:30AM to 10:30AM), and Thursdays (10:30AM to 11:30AM)</center> </h3>
+	<br>
+<div style="background-color:black"><h2><font color="white">About the Course</font></h2></div>
+<h3>Description:</h3> <p>This course focuses on software development skills in the context of dominant algorithmic patterns found in scientific computing. Topics include:
+<ul>
+<li>Exploring tools that cross most disciplines (build tools, version control tools, compilers, debugging tools, profiling tools etc.)</li>
+<li>Exploring dominant algorithmic patterns found in dense and sparse linear algebra, structured and unstructured grid methods, tree-based codes, particle methods, FFTs, and PDEs</li>
+<li>Selected topics in C++ programming, asymptotic analysis, perfomance tuning </li>
+</ul>
+</p>
+
+<h3>Details:</h3> 
+The course <a href="syllabus.pdf">syllabus</a> discusses most of the details of the course, including a tentative schedule of topics, exam dates, and other administrative information. Announcements, assignment links, and discussion will be posted on the GitHub-Teams discussion page. If you have a question about a concept covered in lecture or about a detail of an assignment, check the discussion page first!
+
+<h3>Instructor:</h3><p class="tab"> Nikhil Hegde <br>
+nikhilh 'at' iitdh 'dot' ac 'dot' in<br>
+Office hour (doubt clearing session): Walk-ins or on demand online sessions based on the availability of student(s) and the instructor<br></p>
+
+<h3>TAs:</h3><p class="tab"> Gayatri Rayar and Vivek Shahare<br>
+{gayatri 'dot' rayar} and {212011006} 'at' iitdh 'dot' ac 'dot' in, <br>
+Office hour (doubt clearing session): On demand online sessions based on the availability of student(s) and the TAs</p>
+
+<div style="background-color:black"><h2><font color="white">Lecture Schedule and Notes</font></h2></div>
+
+<ul>
+	<li> Week 1 (1/8 - 4/8): Syllabus, Course Overview -  <a href="slides/Week1.pdf">Slides</a>, <a href="https://www.cs.cmu.edu/~15110-s13/Wing06-ct.pdf">Computational Thinking</a>,  <a href="slides/week1_codesamples.zip">CodeSamples</a></li> 
+	<li> Week 2 (8/8, 11/8 (no class on 9/8, holiday)): Program Development Environment, Minimal C++ -  <a href="slides/Week2.pdf">Slides</a>, <a href="slides/week2_codesamples.zip">CodeSamples</a></li> 
+	<li> Week 3 (16/8 - 18/8  (no class on 15/8, holiday)): Minimal C++, Build tool (Make) -  <a href="slides/Week3.pdf">Slides</a>, <a href="slides/week3_codesamples.zip">CodeSamples</a></li> 
+	<li> Week 4 (22/8 - 25/8): Build tool (Make demo), Motifs - Matrix computation with dense matrices, Performance Analysis (PAPI)  <a href="slides/Week4.pdf">Slides</a>, <a href="slides/week4_codesamples.zip">CodeSamples</a></li> 
+	<li> Week 5 (29/8 - 30/8): Motifs - Matrix computation with dense matrices (using BLAS, LAPACK)  <a href="slides/Week5.pdf">Slides</a></li> 
+	<li> Week 6 (5/9 - 8/9): Motifs - Matrix computation with dense and sparse matrices <a href="slides/Week6.pdf">Slides</a>, <a href="slides/lagrange_multiplier_example.pdf">On_optimal_matrix chunk_sizes</a></li> 
+	<li> Week 7 (12/9 - 15/1): Sparse Matrices (Contd.), Motifs - FFT (accelerating Matvec using FFT), Object-Orientation <a href="slides/Week7.pdf">Slides</a>, <a href="https://www.math.uci.edu/~chenlong/MathPKU/FMMsimple.pdf">Reference: On_Separable_Matrices (Section 1 only)</a></li> 
+	<li> Week 8 (26/9 - 29/9): Intermediate C++ (const, references, generic programming)<a href="slides/Week8.pdf">Slides</a>, <a href="slides/week8_codesamples.zip">CodeSamples</a></li> 
+	<li> Week 9 (3/10 - 4/10 (no class on 6/10, cancelled)): Intermediate C++ (STL, function and class templates, gdb)<a href="slides/Week9.pdf">Slides</a>, <a href="slides/week9_codesamples.zip">CodeSamples</a></li> 
+	<li> Week 10 (10/10 - 13/10): Motif-structured grids (FDM) Notes:<a href="slides/10_10_2022.pdf">10/10</a>, <a href="slides/11_10_2022.pdf">11/10</a>, <a href="slides/13_10_2022.pdf">13/10</a></li> 
+	<li> Week 11 (17/10 - 20/10): FDM Contd. Finite Element Method (FEM)<a href="slides/17_10_2022.pdf">17/10</a>, <a href="slides/18_10_2022.pdf">18/10</a>, <a href="slides/20_10_2022.pdf">20/10</a></li> 
+	<li> Week 12 (25/10, 27/10 (no class on 24/10, holiday)): FEM (Numerical integration) <a href="slides/27_10_2022.pdf">25/10 and 27/10</a></li> 
+	<li> Week 13 (31/10, 3/11 (no class on 1/11, holiday)): FEM (2D problem) <a href="slides/31_10_2022.pdf">Notes_31_10</a>, <a href="slides/Week13.pdf">Grids: Program_Representation</a></li> 
+	<li> Week 14 (7/11 and 10/11 (no class on 8/11, holiday)): 3 important problems from motifs in scientific computing <a href="slides/Week14.pdf">Slides</a></li> 
+</ul>
+
+<div style="background-color:black"><h2><font color="white">Homework Assignments and Exams</font></h2></div>
+All homework assignments are due at 11:59PM unless otherwise announced. Assignment and exam details will be posted during the semester. 
+<br>
+Instructions for getting familiar with test/development environment (Linux) are <a href="au21/slides/remote_login.pdf">here</a> 
+<ul>
+	<li> Programming assignment 1: Environment setup - GitHub and Git overview, Make tool, Matrix-Multiplication, and Performance analysis with PAPI <a href="homeworks/PA1.pdf">PA1</a>. Due: 15/9/2022</li> 
+	<li> Midsem exam: Floating point representation, Computational thinking, C++ programming, tools (Make, Git), Sparse and Dense Matrix multiplication <a href="homeworks/Midsem.pdf">Midsem</a>. On: 20/9/2022</li> 
+	<li> Programming assignment 2: Finite Element Method <a href="homeworks/PA2.pdf">PA2</a>. Due: 7/11/2022</li> 
+	<li> Endsem exam: C++ programming (templates, classes), GDB-Debugger, FDM, FEM, problems from Motifs in scientific computing (Minimum Weight Triangulation, Barnes-Hut) <a href="homeworks/Endsem.pdf">Endsem</a>. On: 15/11/2022</li> 
+</ul>
+</body>
+</html>
+
+
+
