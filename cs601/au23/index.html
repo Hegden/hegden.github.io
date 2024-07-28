@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>CS601</title>
+		<!-- link to main stylesheet -->
+		<link rel="stylesheet" Type="text/css" href="/cs601/cs601.css">
+	</head>
+	
+<body>
+       	<h1><center>CS601: Software Development for Scientific Computing<center></h1>
+	<h2><center>Autumn 2023</center> </h2>
+	<h3><center> Tuesdays (2:00PM - 2:55PM), Thursdays (3:00PM to 3:55PM), and Fridays (4:00PM to 4:55PM)</center> </h3>
+	<br>
+<div style="background-color:black"><h2><font color="white">About the Course</font></h2></div>
+<h3>Description:</h3> <p>This course focuses on software development skills in the context of dominant algorithmic patterns found in scientific computing. Topics include:
+<ul>
+<li>Exploring tools that cross most disciplines (build tools, version control tools, compilers, debugging tools, profiling tools etc.)</li>
+<li>Exploring dominant algorithmic patterns found in dense and sparse linear algebra, structured and unstructured grid methods, tree-based codes, particle methods, FFTs, and PDEs</li>
+<li>Selected topics in C++ programming, asymptotic analysis, perfomance tuning </li>
+</ul>
+</p>
+
+<h3>Details:</h3> 
+The course <a href="syllabus.pdf">syllabus</a> discusses most of the details of the course, including a tentative schedule of topics, exam dates, and other administrative information. Announcements, assignment links, and discussion will be posted on the GitHub-Teams discussion page. If you have a question about a concept covered in lecture or about a detail of an assignment, check the discussion page first!
+
+<h3>Instructor:</h3><p class="tab"> Nikhil Hegde <br>
+nikhilh 'at' iitdh 'dot' ac 'dot' in<br>
+Office hour (doubt clearing session): Walk-in on Wednesdays 3PM to 4PM (A24, 2nd floor, WALMI Campus).</p>
+
+<h3>TAs:</h3><p class="tab"> None<br>
+
+<div style="background-color:black"><h2><font color="white">Lecture Schedule and Notes</font></h2></div>
+
+<ul>
+	<li> Week 1 (1/8 - 4/8): Syllabus, Course Overview,  -  <a href="slides/Week1.pdf">Slides</a>,  <a href="https://www.cs.cmu.edu/~15110-s13/Wing06-ct.pdf">Computational Thinking</a></li> 
+	<li> Week 2 (8/8 - 11/8): Real numbers, program development environment  <a href="slides/Week2.pdf">Slides</a> </li>
+	<li> Week 3 (15/8-holiday, 17/8 - 18/8): program development environment (contd.), Makefile <a href="slides/Week3.pdf">Slides</a> </li> 
+	<li> Week 4 (22/8 - 25/8): Makefile (demo), Motifs - Matrix computation with dense matrices <a href="slides/Week4.pdf">Slides</a></li> 
+	<li> Week 5 (29/8 - 1/9): Matrix Multiplication, Library functions <a href="slides/Week5.pdf">Slides</a> <a href="slides/class_notes_lecture13_14.pdf">Class notes</a></li> 
+	<li> Week 6 (5/9 - 8/9): Sparse Linear Algebra, Tools <a href="slides/Week6.pdf">Slides</a> </li> 
+	<li> Week 7 (12/9 - 15/9): Tools <a href="slides/Week7.pdf">Slides</a> </li> 
+	<li> Week 9 (26/9, Holiday on 28/9, class cancelled on 29/9): Intermediate C++ - OO Thinking <a href="slides/Week9.pdf">Slides</a> </li> 
+	<li> Week 10 (3/10 - 6/10): Intermediate C++ - Access control, polymorphic usage, has-a / is-a relationship, overloading and overriding<a href="slides/Week10.pdf">Slides</a> </li> 
+	<li> Week 11 (10/10 - 13/10): Intermediate C++ - const and references, templates, structured grids (intro) <a href="slides/Week11.pdf">Slides</a> </li> 
+	<li> Week 12 (delete class on 17/10, 19/10 - 20/10): structured grids (FDM) <a href="slides/Week12.pdf">Slides</a> Notes(from Autumn22):<a href="au22/slides/10_10_2022.pdf">part1</a>, <a href="au22/slides/11_10_2022.pdf">part2</a>, <a href="au22/slides/13_10_2022.pdf">part3</a> </li> 
+	<li> Week 13 (holiday on 24/10, 26/10-): unstructured grids (FEM) <a href="slides/Week13.pdf">Slides</a> Notes(from Autumn22):<a href="au22/slides/18_10_2022.pdf">part1</a>, <a href="au22/slides/20_10_2022.pdf">part2</a></li> 
+	<li> Week 14 (31/10, 3/11): FEM, Program representation, Motifs-FFT: <a href="slides/Week14.pdf">Slides</a>, <a href="au22/slides/27_10_2022.pdf">FEM_notes (from Autumn22)</a></li> 
+	<li> Week 15 (7/11 - 10/11): Motifs-Particle Methods <a href="slides/Week15.pdf">Slides</a></li> 
+</ul>
+
+<div style="background-color:black"><h2><font color="white">Homework Assignments and Exams</font></h2></div>
+All homework assignments are due at 11:59PM unless otherwise announced. Assignment and exam details will be posted during the semester. 
+<br>
+Instructions for getting familiar with test/development environment (Linux) are <a href="au21/slides/remote_login.pdf">here</a> 
+<ul>
+	<li> In-Class Quiz: <a href="https://forms.gle/vFacawPkYJqQfyNu6">10/11/23_2</a></li>
+	<li> Programming assignment 1: Make tool, Matrix-Multiplication, Intrinsics, BLAS APIs <a href="homeworks/PA1.pdf">PA1</a>. Due: 15/9/2023</li> 
+	<li> Midsem exam: Floating point representation, Computational thinking, tools (Make, gdb, Valgrind, Doxygen), Sparse and Dense Matrix multiplication <a href="homeworks/Midsem.pdf">Midsem</a>. On: 20/9/2023</li> 
+	<li> Bonus Assignment1: Intermediate C++, Due on 16/10/2023, 9:45PM.
+	<li> Programming assignment 2: Finite Element Method <a href="homeworks/PA2.pdf">PA2</a>. Due: 9/11/2023</li> 
+	<li> Endsem exam: Upto midsem syllabus + OO principles, FDM, FEM, N-Body methods, FFT <a href="homeworks/Endsem.pdf">Endsem</a>. On: 16/11/2023</li> 
+	
+</ul>
+
+<a href="https://script.google.com/a/macros/iitdh.ac.in/s/AKfycbzpStUioj00yC5KdAGGP_fH2kWCriTsXdhV8_fL3Q_KMSftcA2GkhnaLpKStPzHsaCH/exec">View Scores</a>
+<br>
+Consolidated Quiz Scores (monthwise)
+<ul>
+	<li><a href="https://script.google.com/a/macros/iitdh.ac.in/s/AKfycbxXdQbNNmt7FS8t1jyUQa-7oFHORUuhxu-VpbcWJ9RlMcKBOoWRrU2I8KTwyPQ9dwRy/exec">August</a> </li>
+	<li><a href="https://script.google.com/a/macros/iitdh.ac.in/s/AKfycbxid7twne7D-qy-YkqG04EYMAIICQ3unTp5aeg56I9YTuZiUJHxTNLdExyKpOpL70AaCw/exec">September</a> </li>
+	<li><a href="https://script.google.com/a/macros/iitdh.ac.in/s/AKfycbywbkLtLbVQMfR3wO26JDBonzaadEHn2ZR2Wh7MYparD53o1VJGBSarTlmGOlx08a3Y/exec">October_and_November</a> </li>
+</ul>
+</body>
+</html>
+
+
+
