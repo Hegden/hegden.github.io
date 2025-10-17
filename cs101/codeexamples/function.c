@@ -19,7 +19,6 @@ int main(){
 	swap(x,y); 
 	swap(x,y); 
 	swap(x,y); 
-	printf("global var=%d\n",myVar);
 	return 0;
 }
 
@@ -34,8 +33,7 @@ void swap(int a, int b){
 	b=tmp;
 	normalVar++;
 	count++;
-	printf("Inside swap: globalVar=%d normalVar=%d static var count=%d\n",myVar, normalVar, count); //note global variable, myVar, visible here.
-	myVar=1000; //modifying global variable for demonstration
+	printf("Inside swap: normalVar=%d static var count=%d\n",normalVar, count);
 	return;
 }
 
@@ -43,7 +41,6 @@ void swap2(int *a, int *b){
 	int tmp=*a;
 	*a=*b;
 	*b=tmp;
-	printf("Inside swap2: globalVar=%d \n",myVar);//note global variable, myVar, visible here.
 	return;
 }
 
